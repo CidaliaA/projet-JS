@@ -1,0 +1,51 @@
+/* /* ":root" variables(test couleurs) à la racine de notre code,google fonts police et webgradients(gradient couleur) */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+:root{
+    --title:#f8c27a;
+    /* ombre tex et boite vers la droite et opacité  */
+    --textShadow:0 2px 2px rgba(0,0,0,.7);
+    --box-shadow: 0 0px 10px rgba(0,0,0,.2) ;
+}
+/* "* " tout les elements du html */
+/* "box-sizing" permet  dedimensionner nos differents elements */
+/* "reset" permet de mettre a o les elements du html pour affichage sur different navigateurs */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* "font-size"taille de police;"100vw,vh"toute la largeur et hauteur ecran,"overflow:hidden" sans scroll,font-family police ecriture, " sans serif: sans empattement */
+body{
+    font-size: 14px;
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:sans-serif ;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.container{
+    background-color: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+h1{
+    /* /utilise var(-- "le nom de la variable" ) pour ombre text, "inlin block" pour que le titre ne s'etale pas  */
+    font-family:'Luckiest Guy', cursive;
+    margin-bottom:15px;
+    color: #ffc31d;
+    text-shadow:var(--text-shadow);
+    display: inline-block;
+}
+.vies{
+    margin:10px;
+}
+/* ion "un tag"? ; "fill" attribut couleur svg (mais aussi animation?) */
+ion-icon{
+    font-size: 50px;
+    fill:red;
+}
