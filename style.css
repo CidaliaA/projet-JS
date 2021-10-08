@@ -16,7 +16,7 @@
 }
 /* "font-size"taille de police;"100vw,vh"toute la largeur et hauteur ecran,"overflow:hidden" sans scroll,font-family police ecriture, " sans serif: sans empattement */
 body{
-    font-size: 14px;
+    font-size: 16px;
     width: 100vw;
     overflow: hidden;
     height: 100vh;
@@ -44,8 +44,55 @@ h1{
 .vies{
     margin:10px;
 }
-/* ion "un tag"? ; "fill" attribut couleur svg (mais aussi animation?) */
+/* ion "un tag"? ; "fill" attribut couleur svg (mais aussi animation?) "font-size": taille text */
 ion-icon{
     font-size: 50px;
     fill:red;
+}
+/* /formulaire envoi entier */
+#inputBox{
+    background-color: #96e6a1;
+    padding: 15px;
+    border-radius: 5px;
+}
+/* /ecriture label en css */
+#inputBox >label {
+    display:block ;
+    margin-bottom: 8px;
+}
+/* ecriture input */
+input,
+button{
+    outline: none;
+    border: none;
+    /* en haut en bas ,a gauche et a droite */
+    padding: 3px 20px;
+    border-radius: 5px;
+}
+/* "cursor pointer main" */
+button{
+    background-color:  teal;
+    color: #ffff;
+    cursor:pointer ;
+    transition: all 0.2s;
+}
+/* passage qui fait monter boutton et change la couleur qd survol */
+button:hover{
+    transform: translateY(-2px);
+    background-color: rgb(0,184,184);
+}
+/* maniere d'ecrire id ?;20px en haut automatique à droite et 0 en bas et auto a gauche */
+p#message{
+    margin: 20px auto 0 auto;
+}
+/* /button que l' on ne va pas afficher à l'écran d'où"display none" seulement qd perd ou gagne */
+#rejouer{
+    display: none; 
+    margin: 5px auto 0 auto;
+}
+/* "font-weight":gras du text */
+#détails{
+    font-weight: bold;
+    font-size:6px ;
+    margin-top: 5px;
 }
