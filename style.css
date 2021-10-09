@@ -7,7 +7,7 @@
     --box-shadow: 0 0px 10px rgba(0,0,0,.2) ;
 }
 /* "* " tout les elements du html */
-/* "box-sizing" permet  dedimensionner nos differents elements */
+/* "box-sizing" permet  de dimensionner nos differents elements */
 /* "reset" permet de mettre a o les elements du html pour affichage sur different navigateurs */
 *{
     padding: 0;
