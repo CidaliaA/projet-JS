@@ -35,11 +35,13 @@ const play= () =>{
     // nombre aléatoire "math":random(fonction qui genere nombre aléatoire0 et 1'exclu'); 'floor'(arrondi en dessous)
     const randomNumber = Math.floor(Math.random()*101);
     const totalVies = 6;
-    let vies = totalVies;
+     let vies = totalVies;
+    // let vies = 4; exemple
     console.log(randomNumber);
 
 
     // actualisation à chaque essai -Toute la logique
+    
     // addEventListener declenche une action(submit),(e)represente l'element sur lequel l' action est envoyé,prevenDefault:empeche l' envoi formulaire,parsIntpermet le passage "3"à 3,input (la ou la personne ecrit);return=stop;||=ou
 
 
@@ -48,14 +50,15 @@ const play= () =>{
     const valeurInput = parseInt (input.value);
 
     if(valeurInput< 0 || valeurInput > 100) return;
-    // ``?(alt gr + 7) permet de rajouter des variables directemen ds le text;{}affiche la variable;display block affiche boutton jeu; "==="egalite stricte
+    // ``?(alt gr + 7) permet de rajouter des variables directement ds le text;{}affiche la variable;display block affiche boutton jeu; "==="egalite stricte
     if(valeurInput===randomNumber){
         body.style.backgroundImage=bgWin;
         message.textContent=`BRAVO !!! Le nombre était bien $ {randomNumber}`;
         rejouerBtn.style.display = "block";
     }
     // systeme chaud/froid
-    // "!==": differente;&&=et en meme tps;attention valeurs strictes(2+1(3))
+
+    // "!==": differente;&&=et en meme tps;attention valeurs strictes(2+1(3))?
     if (valeurInput !== randomNumber) {
         if(randomNumber < valeurInput + 3 && randomNumber> valeurInput - 3){
             body.style.backgroundImage=bgBrulant;
@@ -87,4 +90,23 @@ const play= () =>{
         }
 
     }
+    // innerHTML""(recupère ou defini) enlève tout le code HTML?;[] tableau; "for": pour;
+    // i variable vie?=[coeur(gagne) et ou vide(perdu)];rappel: i++?,+=(pour chaque coeur rajout aux autres)
+    // forEach(pour chaque element du tableau) foction qui permet d'excecuter donnée tableau 
+    // actualiseCoeurs fonction:debut du jeux(coeurs)
+    const actualiseCoeurs =(Vies) =>{
+        divVies.innerHTML = "";
+        let tableauDeVies = [];
+        for (let i = 0; i < vies; i++) {
+            tableauDeVies.push(coeurPlein);
+        }
+        for (let i = 0; i < totalVies-vies; i++){
+            tableauDeVies.push(coeurVides);
+        }
+        tableauDeVies.forEach(coeur =>{
+            divVies.innerHTML += coeur;
+        })
+    }
+    actualiseCoeurs(vies);
 }
+play();
