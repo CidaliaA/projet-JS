@@ -1,20 +1,27 @@
-/* /* ":root" variables(test couleurs) à la racine de notre code,google fonts police et webgradients(gradient couleur) */
+
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+/* /* ":root" variables(test couleurs) à la racine de notre code,google fonts police et webgradients(gradient couleur) */
+
 :root{
     --title:#f8c27a;
     /* ombre tex et boite vers la droite et opacité  */
     --textShadow:0 2px 2px rgba(0,0,0,.7);
     --box-shadow: 0 0px 10px rgba(0,0,0,.2) ;
 }
+
 /* "* " tout les elements du html */
 /* "box-sizing" permet  de dimensionner nos differents elements */
 /* "reset" permet de mettre a o les elements du html pour affichage sur different navigateurs */
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 /* "font-size"taille de police;"100vw,vh"toute la largeur et hauteur ecran,"overflow:hidden" sans scroll,font-family police ecriture, " sans serif: sans empattement */
+
 body{
     font-size: 16px;
     width: 100vw;
@@ -34,7 +41,9 @@ body{
     box-shadow: var(--box-shadow);
 }
 h1{
+
     /* /utilise var(-- "le nom de la variable" ) pour ombre text, "inlin block" pour que le titre ne s'etale pas  */
+
     font-family:'Luckiest Guy', cursive;
     margin-bottom:15px;
     color: #ffc31d;
@@ -44,53 +53,73 @@ h1{
 .vies{
     margin:10px;
 }
+
 /* ion "un tag"? ; "fill" attribut couleur svg (mais aussi animation?) "font-size": taille text */
+
 ion-icon{
     font-size: 50px;
     fill:red;
 }
+
 /* /formulaire envoi entier */
+
 #inputBox{
     background-color: #96e6a1;
     padding: 15px;
     border-radius: 5px;
 }
+
 /* /ecriture label en css */
+
 #inputBox >label {
     display:block ;
     margin-bottom: 8px;
 }
+
 /* ecriture input */
+
 input,
 button{
     outline: none;
     border: none;
+
     /* en haut en bas ,a gauche et a droite */
+
     padding: 3px 20px;
     border-radius: 5px;
 }
+
 /* "cursor pointer main" */
+
 button{
     background-color:  teal;
     color: #ffff;
     cursor:pointer ;
     transition: all 0.2s;
 }
+
 /* passage qui fait monter boutton et change la couleur qd survol */
+
 button:hover{
     transform: translateY(-2px);
     background-color: rgb(0,184,184);
 }
+
 /* maniere d'ecrire id ?;20px en haut automatique à droite et 0 en bas et auto a gauche */
+
 p#message{
     margin: 20px auto 0 auto;
 }
+
 /* /button que l' on ne va pas afficher à l'écran d'où"display none" seulement qd perd ou gagne */
+
 #rejouer{
     display: none; 
     margin: 5px auto 0 auto;
 }
+
 /* "font-weight":gras du text */
+
 #détails{
     font-weight: bold;
     font-size:6px ;

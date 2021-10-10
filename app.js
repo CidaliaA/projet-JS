@@ -31,12 +31,16 @@ const bloose=' linear-gradient(to right, #868f96 0%, #596164 100%)';
 // Play (fonction fleche fonction compact et rapide )
 
 const play= () =>{
+
     // constvies=fixe;letvies=evolue
     // nombre aléatoire "math":random(fonction qui genere nombre aléatoire0 et 1'exclu'); 'floor'(arrondi en dessous)
+
     const randomNumber = Math.floor(Math.random()*101);
     const totalVies = 6;
      let vies = totalVies;
+
     // let vies = 4; exemple
+
     console.log(randomNumber);
 
 
@@ -50,15 +54,19 @@ const play= () =>{
     const valeurInput = parseInt (input.value);
 
     if(valeurInput< 0 || valeurInput > 100) return;
+
     // ``?(alt gr + 7) permet de rajouter des variables directement ds le text;{}affiche la variable;display block affiche boutton jeu; "==="egalite stricte
+
     if(valeurInput===randomNumber){
         body.style.backgroundImage=bgWin;
         message.textContent=`BRAVO !!! Le nombre était bien $ {randomNumber}`;
         rejouerBtn.style.display = "block";
+        essayerBtn.setAttribute("disabled","");
     }
     // systeme chaud/froid
 
-    // "!==": differente;&&=et en meme tps;attention valeurs strictes(2+1(3))?
+    // "!==": differente;&&=et en meme tps;attention valeurs strictes(2+1(3))?;emoji fonctionnement??
+
     if (valeurInput !== randomNumber) {
         if(randomNumber < valeurInput + 3 && randomNumber> valeurInput - 3){
             body.style.backgroundImage=bgBrulant;
@@ -80,6 +88,7 @@ const play= () =>{
 
     })
     // fonction verifyloose(qui verifie si l' on a perdu)?; couleur?;"set attribut" dessactive le bouton ainsi que la valeur vide
+
     const verifyloose = ()=> {
         if(vies === 0){ 
             body.style.backgroundImage = bgLoose;
@@ -92,8 +101,9 @@ const play= () =>{
     }
     // innerHTML""(recupère ou defini) enlève tout le code HTML?;[] tableau; "for": pour;
     // i variable vie?=[coeur(gagne) et ou vide(perdu)];rappel: i++?,+=(pour chaque coeur rajout aux autres)
-    // forEach(pour chaque element du tableau) foction qui permet d'excecuter donnée tableau 
+    // forEach(pour chaque element du tableau) fonction qui permet d'excecuter donnée tableau 
     // actualiseCoeurs fonction:debut du jeux(coeurs)
+
     const actualiseCoeurs =(Vies) =>{
         divVies.innerHTML = "";
         let tableauDeVies = [];
@@ -108,5 +118,12 @@ const play= () =>{
         })
     }
     actualiseCoeurs(vies);
+
+//  "() =>"{}:on lance une fonction;on enleve le massage pour tps de latence(message=none);"document.." fonction qui permet de recharge page
+
+    rejouerBtn.addEventListener('click', () =>{
+        message.style.display = 'none';
+        document.location.reload(true);
+    })
 }
 play();
