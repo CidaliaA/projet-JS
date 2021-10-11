@@ -12,8 +12,8 @@ const body= document.getElementsByTagName('body')[0];
 
 // modeles de coeurs
 
-const coeurVides = '<ion-icon name="heart-outline"></ion-icon>';
-const coeurPlein = '<ion-icon name="heart"></ion-icon>';
+const coeurVides = '<ion-icon name="rose-outline"></ion-icon>';
+const coeurPlein = '<ion-icon name="rose"></ion-icon>';
 
 //Fond(bg=backgroud)
 
@@ -70,16 +70,16 @@ const play= () =>{
     if (valeurInput !== randomNumber) {
         if(randomNumber < valeurInput + 3 && randomNumber> valeurInput - 3){
             body.style.backgroundImage=bgBrulant;
-            message.textContent = "C'est Brûlant !!!🔥🔥🔥 ";
+            message.textContent = "Vous Brûlez!☀️";
         }else if(randomNumber < valeurInput + 6 && randomNumber> valeurInput - 6){
             body.style.backgroundImage=bgBrulant;
-            message.textContent = "C'est Chaud!🔥 ";
+            message.textContent = "Vous Chauffez!🌤️";
         }else if(randomNumber < valeurInput + 11 && randomNumber> valeurInput - 11){
             body.style.backgroundImage=bgBrulant;
-            message.textContent = "C'est tiède ! 😐 ";
+            message.textContent = "Vous Tièdissez!🌥️";
         }else { 
             body.style.backgroundImage = bgFroid;
-            message.textContent = "C'est froid !❄️";
+            message.textContent = "Vous Gelez!❄️";
         }
         vies--;
         verifyLoose ();

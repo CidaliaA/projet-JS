@@ -20,10 +20,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-.bloc{
-    height: 100vh;
-    width:100% ;
-}
 .bloc video{
     position:absolute ;
     min-width: 100%;
@@ -34,6 +30,15 @@
     z-index:-100 ;
     transform: translate(-50%,-50%);
 
+}
+/* creation fond transparent */
+.bloc video::before{
+    position:absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -99;
+    background-color:#1fe0; 
 }
 
 /* "font-size"taille de police;"100vw,vh"toute la largeur et hauteur ecran,"overflow:hidden" sans scroll,font-family police ecriture, " sans serif: sans empattement */
@@ -58,6 +63,9 @@ body{
     box-shadow: var(--box-shadow);
     border-radius: 20px;
 }
+html{
+    font-weight: bold;
+}
 h1{
 
     /* /utilise var(-- "le nom de la variable" ) pour ombre text, "inlin block" pour que le titre ne s'etale pas  */
@@ -68,6 +76,7 @@ h1{
     color: #ffc31d;
     text-shadow:var(--text-shadow);
     display: inline-block;
+    /* font-weight: bold; */
 }
 .vies{
     margin:10px;
@@ -86,6 +95,7 @@ ion-icon{
     background-color: #96e6a1;
     padding: 15px;
     border-radius: 10px;
+    margin: 0;
 }
 
 /* /ecriture label en css */
@@ -144,7 +154,14 @@ p#message{
 /* "font-weight":gras du text */
 
 #détails{
-    font-weight: bold;
-    font-size:10px ;
-    margin-top: 5px;
+    /* font-weight: bold; */
+    font-size:20px ;
+    margin-top: 10px;
+}
+.lien{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
 }
