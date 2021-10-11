@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap'); */
+
 
 /* /* ":root" variables(test couleurs) à la racine de notre code,google fonts police et webgradients(gradient couleur) */
 
@@ -19,19 +20,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+#video{
+    height: 100px;
+    width: auto;
+}
 
 /* "font-size"taille de police;"100vw,vh"toute la largeur et hauteur ecran,"overflow:hidden" sans scroll,font-family police ecriture, " sans serif: sans empattement */
 
 body{
-    font-size: 16px;
+    font-size:20px;
     width: 100vw;
     overflow: hidden;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:sans-serif ;
-    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    /* font-family:sans-serif ; */
+    font-family: 'Special Elite', cursive;
+    /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
 }
 .container{
     background-color: rgba(255,255,255,0.2);
@@ -39,12 +45,14 @@ body{
     border-radius: 5px;
     text-align: center;
     box-shadow: var(--box-shadow);
+    border-radius: 20px;
 }
 h1{
 
     /* /utilise var(-- "le nom de la variable" ) pour ombre text, "inlin block" pour que le titre ne s'etale pas  */
 
-    font-family:'Luckiest Guy', cursive;
+    /* font-family:'Luckiest Guy', cursive; */
+    font-family: 'Special Elite', cursive;
     margin-bottom:15px;
     color: #ffc31d;
     text-shadow:var(--text-shadow);
@@ -66,7 +74,7 @@ ion-icon{
 #inputBox{
     background-color: #96e6a1;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* /ecriture label en css */
@@ -107,6 +115,10 @@ button:hover{
 
 /* maniere d'ecrire id ?;20px en haut automatique à droite et 0 en bas et auto a gauche */
 
+#essayerBtn{
+    font-family: 'Special Elite', cursive;
+}
+
 p#message{
     margin: 20px auto 0 auto;
 }
@@ -122,6 +134,6 @@ p#message{
 
 #détails{
     font-weight: bold;
-    font-size:6px ;
+    font-size:10px ;
     margin-top: 5px;
 }

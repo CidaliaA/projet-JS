@@ -23,7 +23,7 @@ const bgChaud =' linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%)';
 const bgBrulant ='linear-gradient(to top, #ff0844 0%, #ffb199 100%)';
 
 const bgWin =' linear-gradient(to top, #f43b47 0%, #453a94 100%)';
-const bloose=' linear-gradient(to right, #868f96 0%, #596164 100%)';
+const bgLoose=' linear-gradient(to right, #868f96 0%, #596164 100%)';
 
 
 // initialisation jeux
@@ -36,7 +36,7 @@ const play= () =>{
     // nombre aléatoire "math":random(fonction qui genere nombre aléatoire0 et 1'exclu'); 'floor'(arrondi en dessous)
 
     const randomNumber = Math.floor(Math.random()*101);
-    const totalVies = 6;
+    const totalVies = 5;
      let vies = totalVies;
 
     // let vies = 4; exemple
@@ -70,26 +70,27 @@ const play= () =>{
     if (valeurInput !== randomNumber) {
         if(randomNumber < valeurInput + 3 && randomNumber> valeurInput - 3){
             body.style.backgroundImage=bgBrulant;
-            message.textContent = "C'est Brûlant !!!: ";
+            message.textContent = "C'est Brûlant !!!🔥🔥🔥 ";
         }else if(randomNumber < valeurInput + 6 && randomNumber> valeurInput - 6){
             body.style.backgroundImage=bgBrulant;
-            message.textContent = "C'est Chaud!  ";
+            message.textContent = "C'est Chaud!🔥 ";
         }else if(randomNumber < valeurInput + 11 && randomNumber> valeurInput - 11){
             body.style.backgroundImage=bgBrulant;
-            message.textContent = "C'est tiède  ";
+            message.textContent = "C'est tiède ! 😐 ";
         }else { 
             body.style.backgroundImage = bgFroid;
-            message.textContent = "C'est froid !";
+            message.textContent = "C'est froid !❄️";
         }
         vies--;
-        verifyloose ();
+        verifyLoose ();
     }
+        actualiseCoeurs(vies);
     
 
     })
     // fonction verifyloose(qui verifie si l' on a perdu)?; couleur?;"set attribut" dessactive le bouton ainsi que la valeur vide
 
-    const verifyloose = ()=> {
+    const verifyLoose = () =>{
         if(vies === 0){ 
             body.style.backgroundImage = bgLoose;
             body.style.color= '#990000';
@@ -104,16 +105,16 @@ const play= () =>{
     // forEach(pour chaque element du tableau) fonction qui permet d'excecuter donnée tableau 
     // actualiseCoeurs fonction:debut du jeux(coeurs)
 
-    const actualiseCoeurs =(Vies) =>{
+    const actualiseCoeurs =(vies) => {
         divVies.innerHTML = "";
         let tableauDeVies = [];
-        for (let i = 0; i < vies; i++) {
+        for (let i = 0; i < vies; i++){
             tableauDeVies.push(coeurPlein);
         }
         for (let i = 0; i < totalVies-vies; i++){
             tableauDeVies.push(coeurVides);
         }
-        tableauDeVies.forEach(coeur =>{
+        tableauDeVies.forEach(coeur => {
             divVies.innerHTML += coeur;
         })
     }
